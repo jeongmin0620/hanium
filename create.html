@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<!-- saved from url=(0042)file:///C:/Users/JHKIM/Desktop/create.html -->
+<html lang="ko"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./create_files/create.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@200&display=swap" rel="stylesheet">
+    <style type="text/css">
+     *{
+        font-family: 'Gothic A1', sans-serif;
+    }
+
+</style>
+
+<script language="javascript">
+
+    function Input() 
+    {
+        if(document.twin.id.value == "") {
+            alert("ID를 입력하세요.");
+            document.twin.id.focus();
+            return false;
+        }
+
+
+        if(document.twin.pw.value == "") {
+            alert("비밀번호를 입력하세요.");
+            document.twin.pw.focus();
+            return false;
+        }
+        
+        if(document.twin.pwCheck.value == "") {
+            alert("비밀번호 확인을 입력하세요.");
+            document.twin.pwCheck.focus();
+            return false;
+        }
+
+        if(document.twin.name.value == "") {
+            alert("이름을 입력하세요.");
+            document.twin.name.focus();
+            return false;
+        }
+
+        if(document.twin.phone.value == "") {
+            alert("전화번호를 입력하세요.");
+            document.twin.phone.focus();
+            return false;
+        }
+
+        if(document.twin.email1.value == "") {
+            alert("이메일을 입력하세요.");
+            document.twin.email1.focus();
+            return false;
+        }
+        if (document.twin.email.value == "") {
+            alert("이메일을 선택하세요.");
+            document.twin.email.focus();
+            return false;
+        }
+        if (document.twin.job.value == "") {
+            alert("직업을 선택하세요.");
+            document.twin.job.focus();
+            return false;
+        }
+        document.twin.submit();
+    }
+
+    function checkid() {
+        var UserID = document.getElementById("id").value;
+        var _width = '400';
+        var _height = '200';
+        var _left = Math.ceil((window.screen.width - _width)/2);
+        var _top = Math.ceil((window.screen.height - _height)/2);
+        if (UserID) {
+            url = "idcheck.php?UserID="+UserID;
+            window.open(url,"checkid",'width='+_width+', height='+_height+', left='+_left+', top='+_top);
+            
+        } else {
+            alert("아이디를 입력하세요.");
+        }
+    }
+
+    function idselect() {
+        var idchk = document.getElementById('idchk');
+        alert("ID 중복체크를 해주세요.");
+        idchk.value=0;
+
+        return false;
+    }
+
+
+
+    function isSame() {
+        var pw = document.twin.UserPW.value;
+        var confirmPW = document.twin.UserPWConfirm.value;
+
+        var pwdCheck = /^(?=.*[a-zA-Z])(?=.*[!@#$%^*+=-])(?=.*[0-9]).{8,25}$/;
+
+        if(!pwdCheck.test(document.twin.pw.value)) {
+            alert("비밀번호는 영문자+숫자+특수문자 조합으로 8~25자리 사용해야 합니다.");
+            document.twin.pw.focus();
+            return false;
+        }
+        if(document.getElementById('pw').value!='' && document.getElementById('pwCheck').value!='') {
+            if(document.getElementById('pw').value==document.getElementById('pwCheck').value) {
+                document.getElementById('same').innerText='비밀번호가 일치합니다.';
+                document.getElementById('same').style.color='blue';
+            } else {
+                document.getElementById('same').innerText='비밀번호가 일치하지 않습니다.';
+                document.getElementById('same').style.color='red';
+            }
+        }
+    }
+
+
+
+</script>
+</head>
+<body>
+    <div id="wrapper">
+
+        <form action="create.php" method="post" name="twin">
+            <div id="contents" style="margin-left: 500px; margin-top:20px">
+                <p><img src="plantcare1.png" width="350" height="100"></p>
+                <p><b>회원가입</b></p>
+                <tr height="10">
+                </tr>
+                <tr height="40">
+                </tr>
+            </div>
+        </tbody></table> 
+        <div id="contents" style="margin-left: 500px; margin-top:20px">
+            <b>ID</b><br>
+            <input type="text" name="UserID" id="id" maxlength="13" onblur="idselect()" onkeyup="idcheckInit(join);" >&nbsp;
+            <input type="button" value="ID 중복검사" id="checkedid"  onclick="checkid();"><input type="hidden" name="idchk" id="idchk" value=0 class="idchk">
+        </div> 
+        <div id="contents" style="margin-left: 500px; margin-top:20px">
+            <div>
+                <label for="id"><b>비밀번호</b></label><br>
+                <input type="password" class="int" name="UserPW" id="pw" onclick="pwcheck()" onchange="isSame()">
+            </div></div>
+            <div style="margin-left: 500px; margin-top:20px">
+                <label for="pw"><b>비밀번호 확인</b></label><br>
+                <input type="password" name="UserPWConfirm" id="pwCheck" onchange="isSame()">&nbsp;&nbsp;<span id="same"></span>
+            </div>
+            <div style="margin-left: 500px; margin-top:20px">
+                <label for="name"><b>이름</b></label><br>
+                <input type="text" class="int" name="UserName" id="name">
+            </div>
+            <div style="margin-left: 500px; margin-top:20px">
+                <label for="phone"><b>전화번호</b></label><br>
+                <input type="text" onkeyup="this.value=this.value.replace(/[^0-9]/g,'');" class="int" name="UserCellPhone" id="phone">
+            </div>
+            <div style="margin-left: 500px; margin-top:20px">
+                <label for="email"><b>이메일</b></label><br>
+                <input type="text" name="UserEmail" id="email1">@
+                <select name="email">
+                    <option value ="" disabled selected hidden>선택하세요</option>
+                    <option value="naver.com">naver.com</option>
+                    <option value="gmail.com">gmail.com</option>
+                    <option value="daum.net">daum.net</option>
+                    <option value="nate.com">nate.com</option>
+                </select>
+            </div>
+            <div style="margin-left: 500px; margin-top:20px">
+                <label for="job"><b>직업</b></label><br>
+                <select name="job">
+                    <option value="" disabled selected hidden>직업선택</option>
+                    <option value="학생">학생</option>
+                    <option value="회사원">회사원</option>
+                    <option value="기타">기타</option>
+                </select>
+            </div>
+            <br>
+            <div style="
+            margin-left: 615px;">
+            <button type="button" onclick="location.href='login.html'">뒤로가기</button>
+            &nbsp;
+
+            <button type="button" onclick="Input()" 
+            >회원가입</button>
+            
+        </div>
+
+
+    </form>
+</div>
+
+</body></html>

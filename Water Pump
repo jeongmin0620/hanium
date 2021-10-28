@@ -1,0 +1,20 @@
+#define PWMpin D5 //PWM 제어를 위한 핀 3번으로 지정
+#define DIRpin D6 //방향 제어를 위한 핀 4번으로 지정
+
+void setup() {
+  pinMode(DIRpin, OUTPUT);
+}
+
+void loop() {
+  Motor(HIGH,150);//150의 출력으로 정방향 회전
+  delay(3000);    //3000ms 즉 3초간 대기
+  Motor(HIGH,255);//255(최대)의 출력으로 정방향 회전
+  delay(3000);
+  Motor(HIGH,0);//정지
+  delay(3000);
+}
+
+void Motor (boolean DIR, byte Motorspeed) { //펌프의 모터를 제어를 위해 정의한 함수, Motor(HIGH 또는 LOW, 0~255의 출력)
+  analogWrite(PWMpin, (DIR) ? (255 - Motorspeed) : Motorspeed);
+  digitalWrite(DIRpin, DIR);
+}

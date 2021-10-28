@@ -1,0 +1,28 @@
+int RED = D2;
+int GREEN =D1;
+int BLUE= D3;
+void setup() {
+  // initialize digital pin LED_BUILTIN as an output.
+  pinMode(RED, OUTPUT);
+  pinMode(GREEN, OUTPUT);
+  pinMode(BLUE, OUTPUT);
+}
+
+// the loop function runs over and over again forever
+void loop() {
+  digitalWrite(RED, HIGH);
+  digitalWrite(BLUE, LOW);
+  digitalWrite(GREEN, LOW);
+  delay(1000);                       // wait for a second
+
+  
+   digitalWrite(RED, LOW);
+   digitalWrite(BLUE, HIGH);
+   digitalWrite(GREEN, LOW);
+   delay(1000);                      // wait for a second
+
+   digitalWrite(RED, LOW);
+   digitalWrite(BLUE, LOW);
+   digitalWrite(GREEN, HIGH);
+   delay(1000); 
+}

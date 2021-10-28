@@ -1,0 +1,24 @@
+void setup()
+{
+  Serial.begin(9600
+  );
+  Serial.println("test start~!");
+  Serial.println();
+}
+
+void loop()
+{
+  uint16_t rawVal; //정수변수 선언
+  rawVal =analogRead(A0); // A1포트값을 0~1023사이의 값으로 데이터 수집
+  float vVal = rawVal * 5/1023.0; //전압값으로 변환
+  Serial.println("UV detecting. . .");
+  Serial.print("Raw Value(0-1023) : ");
+  Serial.print(rawVal); // 측정값 시리얼모니터로 출력
+  Serial.print(" = ");
+  Serial.print(vVal,3);// 변환된 전압값을 소수점 3자리까지 출력
+  Serial.print("[V]");
+  Serial.print("UV Index(0 - 10) : ");
+  Serial.println(vVal * 10,1); // 전압값 x10으로 UVI 변환값 출력
+
+  delay(1000);
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://kit.fontawesome.com/51db22a717.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@500&display=swap" rel="stylesheet">
+    </head>
+    <style>
+        *{
+            font-family: 'Gothic A1', sans-serif;
+        }
+    </style>
+    <body>
+        <div class="page-container">
+            <div class="login-form-container shadow">
+                <div class="login-form-right-side">
+                    <div class="top-logo-wrap">
+                    </div>
+                    <i class="fas fa-leaf fa-5x"></i> 
+                    <br>
+                    <h1>PLANTCARE<br>WEB 플랫폼</h1>
+                    </div>
+               <div class="login-form-left-side">
+                <div class="login-top-wrap">
+                    <span>Don't have an account?</span>
+                    <button button type="submit" onClick="location.href='create.html'" class="create-account-btn shadow-light">Create Profile</button>
+                </div>
+                <form action="logincheck.php" method="post" name="login">
+                <div class="login-input-container">
+                    <div class="login-input-wrap input-id">
+                        <i class="far fa-envelope"></i>
+                        <input type="text" name = "id" id="id"/>
+                    </div>
+                    <div class="login-input-wrap input-password">
+                        <i class="fas fa-key"></i>
+                        <input name = "pass" id="pass" type="password">
+                    </div>
+                </div>
+                <div class="login-btn-wrap">
+                    <button class="login-btn" type="submit">Login</button>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
