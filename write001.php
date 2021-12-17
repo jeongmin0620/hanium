@@ -1,9 +1,9 @@
 <?php
 
-	$host = 'db-82rkr.cdb.ntruss.com';
-	$user = 'plant';
-	$pw = '12345678!a';
-	$dbName = 'plantdb';
+	$host = '';
+	$user = '';
+	$pw = '';
+	$dbName = '';
 	$mysqli = mysqli_connect($host, $user, $pw, $dbName);
 ;
 	$temp = $_GET['temp'];
