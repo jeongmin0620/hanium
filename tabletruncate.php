@@ -1,6 +1,6 @@
 <?php
-    $conn = mysqli_connect('db-82rkr.cdb.ntruss.com', 'plant', '12345678!a');
-    mysqli_select_db($conn, "plantdb");  
+    $conn = mysqli_connect('host', 'user', 'pw');
+    mysqli_select_db($conn, 'db');  
     $table = $_POST['table'];            
     
     $sql = "TRUNCATE $table";             
