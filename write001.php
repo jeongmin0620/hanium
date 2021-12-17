@@ -5,7 +5,7 @@
 	$pw = '';
 	$dbName = '';
 	$mysqli = mysqli_connect($host, $user, $pw, $dbName);
-;
+
 	$temp = $_GET['temp'];
 	$humidity = $_GET['humidity'];
 	$level = $_GET['level'];
